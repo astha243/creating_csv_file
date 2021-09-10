@@ -1,6 +1,6 @@
 
 import csv
-#to genetrate the list as the numbers are added
+
 def get_list (file_path):
     with open('Employee_information.csv', 'r') as csvfile :
         reader = csv.reader(csvfile)
@@ -15,16 +15,7 @@ def append_to_Employee_information(file_path, Full_name, Employee_ID, Email, Con
     with open(file_path, 'a') as csvfile:
        
         writer = csv.DictWriter(csvfile, fieldnames= fieldname)
-        # writer.writeheader()
-        for item in fieldname:
-            item += 1
-            if item <= 0:
-                writer.writeheader()
-            else:
-                continue
-
-
-       
+        writer.writeheader()
         writer.writerow({
             'number':next_id,
             'Full_name': Full_name,
@@ -38,11 +29,5 @@ append_to_Employee_information(
 'Employee_information.csv', 
 'Astha Budhathoki',
 '110', 
-'aasthabuathoki@gmail.com', 
-'5106313111', 'Nepal', 'Email')
-append_to_Employee_information(
-'Employee_information.csv', 
-'Ishara Budhathoki',
-'111', 
-'ishara.budathokii@gmail.com', 
-'8572343855', 'Nepal', 'Email')
+'xyz@gmail.com', 
+'000-111-0000', 'Nepal', 'Email')
